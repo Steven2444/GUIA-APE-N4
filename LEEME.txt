@@ -1,0 +1,10 @@
+APE 4 - Clases, Objetos y Metodos (Java)
+
+parteA/ ejercicio1 ... ejercicio8
+parteB/ ejercicio1 ... ejercicio5
+parteC/ ejercicio1 ... ejercicio5
+
+Cada carpeta es un proyecto independiente (todas tienen su propia clase Main).
+Compilar y ejecutar dentro de cada carpeta:
+  javac -encoding UTF-8 *.java
+  java Main

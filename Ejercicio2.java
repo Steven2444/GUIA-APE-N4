@@ -1,38 +1,43 @@
 class Rectangulo {
-    double base, altura;
+    private double base;
+    private double altura;
 
-    Rectangulo(double base, double altura) {
+    public Rectangulo(double base, double altura) {
         this.base = base;
         this.altura = altura;
     }
 
-    double calcularArea() {
+    public double calcularArea() {
         return base * altura;
     }
 
-    double calcularPerimetro() {
+    public double calcularPerimetro() {
         return 2 * (base + altura);
     }
 
-    boolean esCuadrado() {
+    public boolean esCuadrado() {
         return base == altura;
     }
 
-    String obtenerDescripcion() {
-        return "Rectangulo de " + base + " x " + altura;
+    public String obtenerDescripcion() {
+        return "Rectángulo de " + base + " x " + altura;
     }
 
-    void mostrar() {
+    public void mostrar() {
         System.out.println(obtenerDescripcion());
-        System.out.println("Area: " + calcularArea());
-        System.out.println("Perimetro: " + calcularPerimetro());
-        System.out.println("Es cuadrado: " + esCuadrado());
+        System.out.println("Área: " + calcularArea());
+        System.out.println("Perímetro: " + calcularPerimetro());
+        System.out.println("¿Es cuadrado?: " + esCuadrado());
+        System.out.println("-----------------------------");
     }
 }
 
-public class Ejercicio2 {
+public class Main {
     public static void main(String[] args) {
-        Rectangulo r = new Rectangulo(4, 6);
-        r.mostrar();
+        Rectangulo r1 = new Rectangulo(4.0, 6.0);
+        Rectangulo r2 = new Rectangulo(5.0, 5.0);
+
+        r1.mostrar();
+        r2.mostrar();
     }
 }

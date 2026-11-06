@@ -1,38 +1,49 @@
 class Autor {
-    String nombre, nacionalidad;
+    private String nombre;
+    private String nacionalidad;
 
-    Autor(String nombre, String nacionalidad) {
+    public Autor(String nombre, String nacionalidad) {
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
 }
 
-class Libro1 {
-    String titulo;
-    int anio;
-    Autor autor;
+class Libro {
+    private String titulo;
+    private int anio;
+    private Autor autor; // objeto como atributo
 
-    Libro1(String titulo, int anio, Autor autor) {
+    public Libro(String titulo, int anio, Autor autor) {
         this.titulo = titulo;
         this.anio = anio;
         this.autor = autor;
     }
 
-    void mostrarInformacion() {
-        System.out.println(titulo + " - " + anio
-                + " - Autor: " + autor.nombre);
+    public void mostrarInformacion() {
+        System.out.println("Título: " + titulo);
+        System.out.println("Año: " + anio);
+        System.out.println("Autor: " + autor.getNombre());
+        System.out.println("-----------------------------");
     }
 }
 
-public class Ejercicio1 {
+public class Main {
     public static void main(String[] args) {
-        Autor a1 = new Autor("Gabriel Garcia Marquez", "Colombiano");
-        Autor a2 = new Autor("Julio Cortazar", "Argentino");
+        Autor autor1 = new Autor("Gabriel García Márquez", "Colombiana");
+        Autor autor2 = new Autor("Jorge Icaza", "Ecuatoriana");
 
-        Libro1 l1 = new Libro1("Cien anos de soledad", 1967, a1);
-        Libro1 l2 = new Libro1("Rayuela", 1963, a2);
+        Libro libro1 = new Libro("Cien años de soledad", 1967, autor1);
+        Libro libro2 = new Libro("Huasipungo", 1934, autor2);
 
-        l1.mostrarInformacion();
-        l2.mostrarInformacion();
+        libro1.mostrarInformacion();
+        libro2.mostrarInformacion();
     }
 }
